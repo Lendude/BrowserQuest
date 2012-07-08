@@ -9,6 +9,7 @@ define(['mob', 'timer'], function(Mob, Timer) {
                 this.idleSpeed = 700;
                 this.shadowOffsetY = -2;
                 this.isAggressive = false;
+                this.XPWorth = 5;
             }
         }),
 

@@ -38,6 +38,9 @@ define(['entity', 'transition', 'timer'], function(Entity, Transition, Timer) {
             this.isDead = false;
             this.attackingMode = false;
             this.followingMode = false;
+            
+            //XP
+            this.XPWorth = 1;
     	},
 	
     	clean: function() {
@@ -511,6 +514,12 @@ define(['entity', 'transition', 'timer'], function(Entity, Transition, Timer) {
          * 
          */
     	die: function() {
+    		if(this.target) {
+                if(this.target.addXP) {
+                	this.target.addXP(this.XPWorth);
+                }
+            }
+    		
     	    this.removeTarget();
     	    this.isDead = true;
 	    

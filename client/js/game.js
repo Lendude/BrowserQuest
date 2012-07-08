@@ -117,6 +117,7 @@ function(InfoManager, BubbleManager, Renderer, Map, Animation, Sprite, AnimatedT
             if(this.storage.hasAlreadyPlayed()) {
                 this.player.setSpriteName(this.storage.data.player.armor);
                 this.player.setWeaponName(this.storage.data.player.weapon);
+                this.player.setXPTotal(this.storage.data.player.xp);
             }
         
         	this.player.setSprite(this.sprites[this.player.getSpriteName()]);
@@ -1059,6 +1060,12 @@ function(InfoManager, BubbleManager, Renderer, Map, Animation, Sprite, AnimatedT
                     if(self.equipment_callback) {
                         self.equipment_callback();
                     }
+                });
+                
+                self.player.onAddXP(function(xp) {
+                	console.log('xp:'+xp);
+                	self.storage.setPlayerXP(self.player.getXPTotal());
+                    self.infoManager.addDamageInfo("+"+xp+" XP", self.player.x, self.player.y - 15, "healed");
                 });
                 
                 self.player.onInvincible(function() {

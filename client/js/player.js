@@ -19,6 +19,9 @@ define(['character', 'exceptions'], function(Character, Exceptions) {
             // modes
             this.isLootMoving = false;
             this.isSwitchingWeapon = true;
+            
+            //XP
+            this.XPTotal = 0;
         },
     
         loot: function(item) {
@@ -178,6 +181,10 @@ define(['character', 'exceptions'], function(Character, Exceptions) {
         onInvincible: function(callback) {
             this.invincible_callback = callback;
         },
+        
+        onAddXP: function(callback) {
+            this.addxp_callback = callback;
+        },
 
         startInvincibility: function() {
             var self = this;
@@ -211,6 +218,21 @@ define(['character', 'exceptions'], function(Character, Exceptions) {
             if(this.invincibleTimeout) {
                 clearTimeout(this.invincibleTimeout);
             }
+        },
+        
+        setXPTotal: function(xp_total) {
+        	this.XPTotal = xp_total;
+        },
+        
+        getXPTotal: function() {
+        	return this.XPTotal;
+        },
+        
+        addXP: function(xp) {
+        	this.XPTotal += xp;
+        	if (this.addxp_callback) {
+        		this.addxp_callback(xp);
+        	}
         }
     });
 

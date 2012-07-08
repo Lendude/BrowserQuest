@@ -17,7 +17,8 @@ define(function() {
                     name: "",
                     weapon: "",
                     armor: "",
-                    image: ""
+                    image: "",
+                    xp: 0,
                 },
                 achievements: {
                     unlocked: [],
@@ -76,6 +77,12 @@ define(function() {
         setPlayerWeapon: function(weapon) {
             this.data.player.weapon = weapon;
             this.save();
+        },
+        
+        setPlayerXP: function(xp) {
+        	this.data.player.xp = xp;
+        	this.save();
+        	console.log('XP saved: '+this.data.player.xp);
         },
 
         savePlayer: function(img, armor, weapon) {
