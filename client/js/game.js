@@ -1063,9 +1063,11 @@ function(InfoManager, BubbleManager, Renderer, Map, Animation, Sprite, AnimatedT
                 });
                 
                 self.player.onAddXP(function(xp) {
-                	console.log('xp:'+xp);
                 	self.storage.setPlayerXP(self.player.getXPTotal());
                     self.infoManager.addDamageInfo("+"+xp+" XP", self.player.x, self.player.y - 15, "healed");
+                    if (self.player.ding) {
+                    	self.infoManager.addDamageInfo("D", self.player.x, self.player.y + 15, "healed");
+                    }
                 });
                 
                 self.player.onInvincible(function() {
@@ -1389,10 +1391,14 @@ function(InfoManager, BubbleManager, Renderer, Map, Animation, Sprite, AnimatedT
                     var player = self.player,
                         diff,
                         isHurt;
-                
+              
                     if(player && !player.isDead && !player.invincible) {
                         isHurt = points <= player.hitPoints;
                         diff = points - player.hitPoints;
+                        if(isHurt) {
+                        	diff = parseInt(diff * Math.pow(0.9, player.level));	//reduce damage by 10% per level
+                        	points = player.hitPoints + diff;	//diff is negative, so add it to substract it
+                        }
                         player.hitPoints = points;
 
                         if(player.hitPoints <= 0) {

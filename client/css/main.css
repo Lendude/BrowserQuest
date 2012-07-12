@@ -173,7 +173,7 @@ footer, header, hgroup, menu, nav, section {
     #instructions {position:absolute;top:50%;left:50%;z-index:1000;font-family:'GraphicPixel';pointer-events:none;opacity:0;-moz-transition:0.25s opacity linear;-webkit-transition:0.4s top ease, 0.4s opacity linear;-o-transition:0.4s top ease, 0.4s opacity linear;-ms-transition:0.4s top ease, 0.4s opacity linear;transition:0.4s top ease, 0.4s opacity linear;}
     #instructions.active, #achievements.active {opacity:1;pointer-events:auto;}
     
-    #weapon, #armor {image-rendering:-moz-crisp-edges;}
+    #weapon, #armor, #level {image-rendering:-moz-crisp-edges;}
 
     #achievements, #achievements li, .coin, #achievement-notification, #coinsparks, .achievement-sharing a, #previous, #next {background:url('../img/1/achievements.png');image-rendering:-moz-crisp-edges;}
     #achievements {font-family:'GraphicPixel'; position:absolute;top:50%;left:50%;z-index:1000;opacity:0;pointer-events:none;-moz-transition:0.25s opacity linear;-webkit-transition:0.4s top ease, 0.4s opacity linear;-o-transition:0.4s top ease, 0.4s opacity linear;-ms-transition:0.4s top ease, 0.4s opacity linear;transition:0.4s top ease, 0.4s opacity linear;}
@@ -498,9 +498,10 @@ footer, header, hgroup, menu, nav, section {
 		#healthbar {height:39px;background-position:0 -51px;width:306px;top:9px;background-size:1440px;z-index:20;}
 		#hitpoints {width:0px;height:33px;top:12px;left:33px;z-index:10;position:absolute;}
 
-        #armor, #weapon {width:48px;height:48px;position:absolute;background-size:288px;background-position:-96px;}
+        #armor, #weapon, #level {width:48px;height:48px;position:absolute;background-size:288px;background-position:-96px;}
         #weapon {left:312px;top:3px;background-size:288px;}
         #armor {left:363px;top:3px;}
+        #level {left:10px;top:10px; z-index: 25; color: white;}
 
         #notifications {width:588px;margin-left:-294px;font-size:20px;color:#eee;top:6px;height:45px;}
         #notifications div.top {top:-45px;}
@@ -658,9 +659,10 @@ footer, header, hgroup, menu, nav, section {
 		#healthbar {height:26px;background-position:0 -34px;width:204px;top:6px;background-size:960px;z-index:20;}
 		#hitpoints {width:0px;height:22px;top:8px;left:22px;z-index:10;position:absolute;}
 
-        #armor, #weapon {width:32px;height:32px;position:absolute;background-size:192px;background-position:-64px;}
+        #armor, #weapon, #level {width:32px;height:32px;position:absolute;background-size:192px;background-position:-64px;}
         #weapon {left:208px;top:2px;}
         #armor {left:242px;top:2px;}
+        #level {left:10px;top:10px; z-index: 25; color: white;}
 
         #notifications {width:392px;margin-left:-196px;font-size:16px;color:#eee;top:2px;height:30px;}
         #notifications div.top {top:-30px;}
@@ -819,11 +821,12 @@ footer, header, hgroup, menu, nav, section {
 		#healthbar {height:26px;background-position:0 -34px;width:204px;top:6px;background-size:960px;z-index:20;}
 		#hitpoints {width:0px;height:22px;top:8px;left:22px;z-index:10;position:absolute;}
 
-        #armor, #weapon {width:32px;height:32px;position:absolute;background-size:192px;background-position:-64px;}
+        #armor, #weapon, #level {width:32px;height:32px;position:absolute;background-size:192px;background-position:-64px;}
         #weapon {left:208px;top:2px;}
         #armor {left:242px;top:2px;}
+        #level {left:10px;top:10px; z-index: 25; color: white;}
 
-        #notifications {width:392px;margin-left:-196px;font-size:16px;color:#eee;top:2px;height:30px;}
+        #notifications {width:375px;margin-left:-196px;font-size:16px;color:#eee;top:2px;height:30px;}
         #notifications div.top {top:-30px;}
         #notifications span {line-height:30px;height:30px;}
         .windows #notifications span {line-height:34px;}
@@ -978,9 +981,10 @@ footer, header, hgroup, menu, nav, section {
 		#healthbar {height:13px;background-position:0 -17px;width:102px;top:3px;background-size:480px;z-index:20;}
 		#hitpoints {width:0px;height:11px;top:4px;left:11px;z-index:10;position:absolute;}
 
-        #armor, #weapon {width:16px;height:16px;position:absolute;background-size:96px;background-position:-32px;}
+        #armor, #weapon, #level {width:16px;height:16px;position:absolute;background-size:96px;background-position:-32px;}
         #weapon {left:104px;top:1px;}
         #armor {left:121px;top:1px;}
+        #level {left:10px;top:10px; z-index: 25; color: white;}
 
         #notifications {width:196px;margin-left:-98px;font-size:10px;color:#eee;top:2px;height:15px;}
         #notifications div.top {top:-15px;}
@@ -1138,9 +1142,10 @@ footer, header, hgroup, menu, nav, section {
 		#healthbar {height:26px;background-position:0 -34px;width:204px;top:6px;background-size:960px;z-index:20;}
 		#hitpoints {width:0px;height:22px;top:8px;left:22px;z-index:10;position:absolute;}
 
-        #armor, #weapon {width:32px;height:32px;position:absolute;background-size:192px;background-position:-64px;}
+        #armor, #weapon, #level {width:32px;height:32px;position:absolute;background-size:192px;background-position:-64px;}
         #weapon {left:208px;top:2px;}
         #armor {left:242px;top:2px;}
+        #level {left:10px;top:10px; z-index: 25; color: white;}
 
         #notifications {display:none;}
 

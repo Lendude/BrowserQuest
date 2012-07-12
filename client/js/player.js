@@ -22,6 +22,8 @@ define(['character', 'exceptions'], function(Character, Exceptions) {
             
             //XP
             this.XPTotal = 0;
+            this.level = 0;		//we are nerds, counting starts at zero!
+            this.ding = false;
         },
     
         loot: function(item) {
@@ -220,8 +222,14 @@ define(['character', 'exceptions'], function(Character, Exceptions) {
             }
         },
         
+        setLevel: function() {
+        	this.level = parseInt((this.getXPTotal()/500));	//1 level for every 500 xp, it's a start...
+        	$('#level').html(this.level);
+        },
+        
         setXPTotal: function(xp_total) {
         	this.XPTotal = xp_total;
+        	this.setLevel();
         },
         
         getXPTotal: function() {
@@ -230,6 +238,9 @@ define(['character', 'exceptions'], function(Character, Exceptions) {
         
         addXP: function(xp) {
         	this.XPTotal += xp;
+        	var old_level = this.level;
+        	this.setLevel();
+        	if (this.level > old_level) this.ding = true;
         	if (this.addxp_callback) {
         		this.addxp_callback(xp);
         	}
